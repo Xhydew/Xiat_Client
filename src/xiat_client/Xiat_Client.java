@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xiat_aclientados;
+package xiat_client;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Joan Galiana MagÃ¡n
  */
-public class Client {
+public class Xiat_Client {
 
     private static final int puerto = 5050;
 
