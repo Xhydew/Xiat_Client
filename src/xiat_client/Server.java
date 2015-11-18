@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Joan Galiana MagÃ¡n
  */
-public class Xiat_Client {
+public class Server {
 
     private static final int puerto = 5050;
 
@@ -26,16 +26,18 @@ public class Xiat_Client {
 
         Scanner teclao = new Scanner(System.in);
 
-        Socket cliSoc = new Socket("84.127.50.89", puerto);
+        Socket cliSoc = new Socket("127.0.0.1", puerto);
 
         Scanner dentro = new Scanner(cliSoc.getInputStream());
         PrintWriter fuera = new PrintWriter(cliSoc.getOutputStream());
         String env;
         System.out.println("Con");
-        
-        Ventanasa ventana = new Ventanasa(dentro,fuera);
-        ventana.setVisible(true);
-
+        do {
+            env = teclao.nextLine();
+            fuera.println(env);
+            System.err.println("Enviando " + env);
+            fuera.flush();
+        } while (!env.equals("0"));
     }
 
 }
